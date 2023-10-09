@@ -1,0 +1,56 @@
+// ========== INPUT QUANTITY ========== //
+.input-quantity {
+  display: inline-flex;
+  border: rem(2) solid $color-primary;
+  border-radius: rem(5);
+  width: rem(160);
+  font-size: rem(28);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-white;
+
+  &__btn,
+  &__input {
+    flex: 0 0 calc(100% / 3);
+    padding: rem(8) rem(5);
+    text-align: center;
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+    width: rem(54);
+    background-color: transparent;
+    color: $color-black;
+  }
+
+  &__btn {
+    outline: none;
+    border: none;
+    border-radius: rem(5);
+    background-color: $color-white;
+    box-shadow: 0 0 0 rem(2) $color-primary;
+    color: inherit;
+    user-select: none;
+    transition: $transition-primary;
+
+    &:disabled {
+      opacity: 0.75;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+
+      @include hover {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+
+      &:focus,
+      &:active {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+}

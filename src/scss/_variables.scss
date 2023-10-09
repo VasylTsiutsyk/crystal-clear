@@ -1,0 +1,61 @@
+// ===== HTML general ===== //
+$browser-context: 16;
+
+// ===== Container ===== //
+$mar: 32;
+$items: 12;
+$content-width: 1280;
+$content-width-sm: 980;
+$content-width-lg: 1580;
+$container: $content-width + 2 * $mar;
+$container-sm: $content-width-sm + 2 * $mar;
+$container-lg: $content-width-lg + 2 * $mar;
+
+// ===== Fonts ===== //
+$font-family-primary: 'Raleway', sans-serif;
+$font-family-secondary: 'Arial', sans-serif;
+$font-size-primary: 1rem;
+$font-weight-primary: 400;
+$body-line-height: 1.2;
+$heading-line-height: 1.2;
+
+// ===== Colors ====== //
+// main colors
+$color-black: #000;
+$color-white: #fff;
+$color-grey: #c8c8c8;
+$color-blue: #0557ab;
+$color-green: #40a52f;
+$color-green-light: #80ad00;
+
+// state colors
+$color-success: #28a745;
+$color-warning: #ffc107;
+$color-danger: #dc3545;
+$color-info: #17a2b8;
+
+// primary/secondary colors
+$color-primary: $color-blue;
+
+// ===== Transitions ===== //
+$transition-duration-primary: 0.35s;
+$transition-duration-short: 0.25s;
+$transition-duration-long: 0.5s;
+$transition-primary: all $transition-duration-primary ease;
+
+// ===== Borders ===== //
+$border-radius-primary: 0.25rem;
+
+// ===== Box-shadows ===== //
+$box-shadow-primary: 0 0 1rem rgba($color-primary, 0.25);
+
+// ====== Breakpoints Map ===== //
+$breakpoints: (
+  xxs: 320px,
+  xs: 480px,
+  sm: 768px,
+  md: 992px,
+  lg: 1280px,
+  xl: 1440px,
+  xxl: 1560px,
+);

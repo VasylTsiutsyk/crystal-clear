@@ -1,0 +1,133 @@
+// ========== FOOTER ========== //
+.footer {
+  background-color: $color-white;
+  color: $color-black;
+
+  &__wrap {
+    padding: to-rem(28) 0 rem(60);
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: to-rem(22);
+
+    > li {
+      flex: 0 0 50%;
+      max-width: 50%;
+
+      > a {
+        width: 100%;
+        font-size: to-rem(15);
+        font-weight: 400;
+        line-height: 336.1%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__meta-info {
+    font-size: to-rem(15);
+    font-weight: 400;
+    line-height: 161%;
+    text-align: center;
+    color: rgba($color-black, 0.6);
+
+    &:not(:last-child) {
+      margin-bottom: to-rem(24);
+    }
+  }
+
+  &__security-block {
+    margin-bottom: to-rem(32);
+  }
+
+  &__award-card {
+    margin-bottom: to-rem(40);
+  }
+}
+
+// Security Block
+.security-block {
+  text-align: center;
+
+  &__title {
+    display: inline-block;
+    margin-bottom: to-rem(8);
+    padding-left: to-rem(32);
+    background: url('../img/icons/padlock.svg') no-repeat center left / to-rem(24) auto;
+    font-size: to-rem(20);
+    font-weight: 400;
+    line-height: 161%;
+    color: $color-black;
+
+    span {
+      color: $color-green;
+    }
+  }
+
+  &__body {
+    font-size: to-rem(12);
+    font-weight: 400;
+    color: #64656b;
+  }
+}
+
+// Award Card
+.award-card {
+  border-radius: to-rem(15);
+  padding: to-rem(20);
+  background-color: #ededed;
+  color: #2f2f2f;
+
+  &__row {
+    display: flex;
+    margin: 0 to-rem(-14);
+  }
+
+  &__col {
+    flex: 0 0 50%;
+    padding: 0 to-rem(14);
+
+    &:first-child {
+      border-right: to-rem(1) solid rgba(#64656b, 0.3);
+    }
+  }
+
+  &__title {
+    margin-bottom: to-rem(6);
+    font-size: to-rem(15);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  &__body {
+    font-size: to-rem(12);
+    font-weight: 400;
+    line-height: 107.5%;
+    color: #8e8e8e;
+  }
+
+  &__text {
+    position: relative;
+    padding-left: to-rem(48);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+
+    &--01 {
+      left: to-rem(-34);
+      top: 82%;
+      width: to-rem(97);
+      transform: translate(0, -50%);
+    }
+
+    &--02 {
+      left: 0;
+      width: to-rem(38);
+    }
+  }
+}

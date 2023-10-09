@@ -1,0 +1,272 @@
+// ========== GLOBAL STYLES ========== //
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-primary;
+  font-weight: $font-weight-primary;
+  line-height: $body-line-height;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-primary;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+// avoid content moving on overflow: hidden
+.disable-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+// wrapper to prevent horizontal scroll
+// if you want use position: sticky; - need to remove // overflow: hidden // !!!
+.wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  outline: 1px solid black;
+  width: to-rem(480);
+  min-height: 100vh;
+  background-color: rgba($color-primary, 0.1);
+}
+
+// container
+.container {
+  margin: 0 auto;
+  max-width: rem($container);
+  padding: 0 rem($mar);
+
+  &--sm {
+    max-width: rem($container-sm);
+  }
+
+  &--lg {
+    max-width: rem($container-lg);
+  }
+}
+
+// section offset, imit container
+.offset-container {
+  padding-left: max(rem($mar), calc((100% - rem($content-width)) / 2));
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+.sr-only:not(:focus, :active) {
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+// ========== TYPOGRAPHY ========== //
+.text-block {
+  ol,
+  ul {
+    li {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  mark {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  del {
+    background-color: #fbb;
+    text-decoration: line-through;
+  }
+
+  ins {
+    background-color: #d4fcbc;
+    text-decoration: none;
+  }
+
+  blockquote {
+    border-left: rem(3) solid $color-primary;
+    padding-left: rem(15);
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: rem(20);
+  }
+}
+
+.pages-list {
+  padding-left: 1rem;
+
+  > li {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      text-decoration: underline;
+      transition: color $transition-duration-primary;
+
+      @include hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 700;
+  line-height: $heading-line-height;
+}
+
+h1,
+.h1 {
+  font-size: rem(96);
+
+  @include respond-below(xl) {
+    font-size: rem(80);
+  }
+}
+
+h2,
+.h2 {
+  font-size: rem(48);
+
+  @include respond-below(md) {
+    font-size: rem(42);
+  }
+}
+
+h3,
+.h3 {
+  font-size: rem(24);
+}
+
+h4,
+.h4 {
+  font-size: rem(20);
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+}
+
+h6,
+.h6 {
+  font-size: 0.75rem;
+}
+
+// Image Comparison Slider
+.img-comp {
+  position: relative;
+  overflow: hidden;
+  border-radius: to-rem(20);
+  padding-bottom: 100%;
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    &--overlay {
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: none;
+      object-position: left;
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    z-index: 10;
+    border: to-rem(2) solid #f2f2f2;
+    border-radius: to-rem(4);
+    width: to-rem(20);
+    height: to-rem(38);
+    background: linear-gradient(180deg, #fff 0%, #d9d9d9 100%);
+    cursor: ew-resize;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('../img/icons/chevron-left-right.svg') no-repeat center;
+      inset: 0;
+    }
+  }
+}
+
+.section-title {
+  font-size: to-rem(35);
+  font-weight: 800;
+  font-variant-numeric: lining-nums proportional-nums;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.checkmark {
+  display: inline-block;
+  width: to-rem(48);
+  height: to-rem(48);
+  background: url('../img/icons/checkmark-success.svg') no-repeat center / contain;
+
+  &--danger {
+    width: to-rem(42);
+    height: to-rem(42);
+    background: url('../img/icons/checkmark-blocked.svg') no-repeat center / contain;
+  }
+}

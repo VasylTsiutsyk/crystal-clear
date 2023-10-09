@@ -1,0 +1,173 @@
+// ========== BUTTONS ========== //
+.btn {
+  position: relative;
+  z-index: 0;
+  outline: none;
+  border: none;
+  border-radius: to-rem(20);
+  min-width: to-rem(334);
+  padding: to-rem(26.5) to-rem(40) to-rem(29.5) to-rem(40);
+  background-color: #bf5000;
+  box-shadow: 0 to-rem(20) to-rem(24) 0 rgb(#000, 0.15);
+  font-size: to-rem(26);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-white;
+  cursor: pointer;
+  transition:
+    background-color $transition-duration-primary,
+    color $transition-duration-primary;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    bottom: to-rem(3);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(107deg, #ffad0d -52.14%, #fd7900 50.75%, #c96101 121.15%);
+  }
+
+  &:disabled,
+  &._disabled {
+    border-color: $color-grey;
+    background-color: $color-grey;
+    color: $color-black;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:not(:disabled, ._disabled) {
+    @include hover {
+    }
+
+    &:focus {
+    }
+
+    &:active {
+    }
+  }
+}
+
+// ========== INPUTS ========== //
+.input {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: to-rem(14);
+    top: 50%;
+    border-radius: 50%;
+    width: to-rem(32);
+    height: to-rem(32);
+    background-color: $color-blue;
+    color: $color-white;
+    transform: translateY(-50%);
+  }
+
+  &--user {
+    &::before {
+      background: $color-blue url('../img/icons/user.svg') no-repeat center / to-rem(14) auto;
+    }
+  }
+
+  &--phone {
+    &::before {
+      background: $color-blue url('../img/icons/phone.svg') no-repeat center / to-rem(14) auto;
+    }
+  }
+
+  input,
+  textarea {
+    appearance: none;
+    outline: none;
+    border: to-rem(1) solid #dbdbdb;
+    border-radius: to-rem(10);
+    width: 100%;
+    padding: to-rem(26) to-rem(16) to-rem(26) to-rem(60);
+    background-color: $color-white;
+    font-size: to-rem(20);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1c1c1c;
+    resize: none;
+    transition: border-color $transition-duration-primary;
+
+    &:disabled,
+    &._disabled {
+      border-color: $color-grey;
+      background-color: rgba($color-grey, 0.75);
+      opacity: 0.8;
+      cursor: default;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+
+    &:not(:disabled, ._disabled) {
+      @include hover {
+        border-color: $color-primary;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 rem(2) $color-black;
+      }
+
+      &:active {
+        border-color: $color-primary;
+      }
+    }
+
+    &::placeholder {
+      color: rgba(#1c1c1c, 0.3);
+    }
+  }
+}
+
+// ========== SELECT ========== //
+.select {
+  select {
+    outline: none;
+    border: rem(1) solid $color-black;
+    border-radius: 0;
+    width: 100%;
+    padding: rem(12) rem(10);
+    background: none;
+    font-size: rem(16);
+    line-height: 1;
+    color: $color-black;
+    transition: border-color $transition-duration-primary;
+
+    &:disabled,
+    &._disabled {
+      border-color: $color-grey;
+      background-color: rgba($color-grey, 0.75);
+      opacity: 0.8;
+      cursor: default;
+    }
+
+    &:not(:disabled, ._disabled) {
+      @include hover {
+        border-color: $color-primary;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 rem(2) $color-black;
+      }
+
+      &:active {
+        border-color: $color-primary;
+      }
+    }
+  }
+}

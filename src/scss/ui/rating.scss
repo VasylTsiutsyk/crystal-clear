@@ -1,0 +1,66 @@
+// ========== Rating ========== //
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: to-rem(20);
+  line-height: 1;
+  letter-spacing: to-rem(4);
+
+  &--set {
+    .rating__item {
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    &::before {
+      content: '★★★★★';
+      display: block;
+      color: #c3c3c3;
+    }
+  }
+
+  &__active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 0%;
+    height: 100%;
+
+    &::before {
+      content: '★★★★★';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: #ffad0d;
+    }
+  }
+
+  &__items {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item {
+    flex: 0 0 20%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &__value {
+    display: none;
+    min-width: to-rem(24);
+    padding-left: to-rem(12);
+    font-size: 75%;
+    line-height: 1;
+  }
+}

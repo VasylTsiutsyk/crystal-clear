@@ -1,0 +1,57 @@
+// ========== RADIO ========== //
+.radio {
+  position: relative;
+  display: block;
+  padding-left: rem(40);
+  cursor: pointer;
+  user-select: none;
+
+  @include hover {
+    input ~ .radio__mark {
+      background-color: rgba(#aeaeae, 0.5);
+    }
+  }
+
+  input {
+    position: absolute;
+    z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked {
+      ~ .radio__mark {
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: rem(1) solid #aeaeae;
+    border-radius: 100%;
+    width: rem(24);
+    height: rem(24);
+    background-color: $color-white;
+    transition: $transition-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border: rem(1) solid #559a1e;
+      border-radius: 50%;
+      width: rem(16);
+      height: rem(16);
+      background-color: #e5ffd1;
+      transform: translate(-50%, -50%) scale(0);
+      transition: $transition-primary;
+    }
+  }
+}
