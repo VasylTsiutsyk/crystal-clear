@@ -1078,6 +1078,7 @@ details {
 .btn {
   position: relative;
   z-index: 0;
+  overflow: hidden;
   outline: none;
   border: none;
   border-radius: 1.25rem;
@@ -1095,6 +1096,25 @@ details {
   cursor: pointer;
   transition: background-color 0.35s, color 0.35s;
 }
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -2.5rem;
+  top: -9.375rem;
+  display: block;
+  margin-left: 3.75rem;
+  width: 2.5rem;
+  height: 18.75rem;
+  background-color: #ffad0d;
+  filter: blur(0.75rem);
+  transform: rotate(45deg);
+  animation-name: slideme;
+  animation-duration: 5s;
+  animation-delay: 0.05s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
 .btn::after {
   content: "";
   position: absolute;
@@ -1105,6 +1125,8 @@ details {
   width: 100%;
   height: 100%;
   background: linear-gradient(107deg, #ffad0d -52.14%, #fd7900 50.75%, #c96101 121.15%);
+  background-size: 600%;
+  animation: btn-animation 8s linear infinite;
 }
 .btn:disabled, .btn._disabled {
   border-color: #c8c8c8;
@@ -1112,6 +1134,31 @@ details {
   color: #000;
   cursor: default;
   pointer-events: none;
+}
+@keyframes btn-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes slideme {
+  0% {
+    left: -1.875rem;
+    margin-left: 0;
+  }
+  30% {
+    left: 110%;
+    margin-left: 5rem;
+  }
+  100% {
+    left: 110%;
+    margin-left: 5rem;
+  }
 }
 .input {
   position: relative;
